@@ -48,7 +48,6 @@ public class PrincipalActivity extends AppCompatActivity {
     GridViewAdapter baseAdapter;
 
     EditText codigo;
-    String name;
     MainActivity main=new MainActivity();
     String id;
     String URL_UPLOAD_IMAGENES = "http://192.168.56.1/abogadoweb/cargarimagen.php/";
@@ -57,15 +56,12 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
-
-        //edtcodigo=findViewById(R.id.edtcodigo);
         btnSubirImagenes=findViewById(R.id.btnSubirImagenes);
         requestQueue = Volley.newRequestQueue(this);
 
         gvImagenes = findViewById(R.id.gvImagenes);
         btnGaleria = findViewById(R.id.btnGaleria);
         codigo=findViewById(R.id.edtcodigo);
-        name="documentoo";
         id=main.id;
 
         btnGaleria.setOnClickListener(new View.OnClickListener() {
@@ -212,7 +208,7 @@ public class PrincipalActivity extends AppCompatActivity {
                             String id=response.getString("id");
                             Toast.makeText(PrincipalActivity.this,id,Toast.LENGTH_SHORT).show();
                             int i=Integer.parseInt(id)+1;
-                            name=nombre+i;
+                            //name=nombre+i;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -226,6 +222,6 @@ public class PrincipalActivity extends AppCompatActivity {
                 }
         );
         requestQueue.add(jsonObjectRequest);
-        return name;
+        return "";
     }
 }
