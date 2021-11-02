@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 if (!response.isEmpty()){
                     id=response;
                     Intent intent=new Intent(getApplicationContext(),PrincipalActivity.class);
+                    intent.putExtra("id_usuario",id);
                     startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(MainActivity.this, "Usuario o contraseña incorrecta",Toast.LENGTH_SHORT).show();
                 }

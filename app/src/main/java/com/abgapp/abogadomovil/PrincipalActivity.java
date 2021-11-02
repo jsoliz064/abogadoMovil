@@ -48,8 +48,7 @@ public class PrincipalActivity extends AppCompatActivity {
     GridViewAdapter baseAdapter;
 
     EditText codigo;
-    MainActivity main=new MainActivity();
-    String id;
+    String id_usuario;
     String URL_UPLOAD_IMAGENES = "http://192.168.56.1/abogadoweb/cargarimagen.php/";
     RequestQueue requestQueue;
     @Override
@@ -62,7 +61,7 @@ public class PrincipalActivity extends AppCompatActivity {
         gvImagenes = findViewById(R.id.gvImagenes);
         btnGaleria = findViewById(R.id.btnGaleria);
         codigo=findViewById(R.id.edtcodigo);
-        id=main.id;
+        id_usuario=getIntent().getStringExtra("id_usuario");
 
         btnGaleria.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +122,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 Map<String, String> params = new Hashtable<String, String>();
                 params.put("nom", nombre);
                 params.put("imagenes", cadena);
-
+                params.put("id_usuario",id_usuario);
                 return params;
             }
         };
