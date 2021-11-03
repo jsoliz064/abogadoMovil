@@ -49,7 +49,7 @@ public class PrincipalActivity extends AppCompatActivity {
 
     EditText codigo;
     String id_usuario;
-    String URL_UPLOAD_IMAGENES = "http://192.168.56.1/abogadoweb/cargarimagen.php/";
+    String URL_UPLOAD_IMAGENES = "http://34.125.181.20/cargarimagen.php/";
     RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

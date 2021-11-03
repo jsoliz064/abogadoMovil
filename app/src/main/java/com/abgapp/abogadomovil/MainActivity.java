@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                validarUsuario("http://192.168.56.1/abogadoweb/validar_usuariopg.php");
+                validarUsuario("http://34.125.181.20/validar_usuariopg.php");
             }
 
         }); 
